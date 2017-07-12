@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
+    <h1>Login and Register Here</h1>
+    <form action="/authenticate" method="post">
+        <label for'username'>Username</label>
+        <input type="text" name="username"><br/>
+        <label for 'password'>Password</label>
+        <input type='password' name='password'><br/>
+        <input type="submit">
+    </form>
+</body>
+</html>
